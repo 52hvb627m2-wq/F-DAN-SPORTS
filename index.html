@@ -1,1 +1,125 @@
-https://chatgpt.com/c/6a47e11e-a590-83ed-af50-1e761927cc65
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Athlete Train</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="logo">⚽ ATHLETE TRAIN</div>
+  <nav>
+    <a href="#home">Ana Sayfa</a>
+    <a href="#programlar">Programlar</a>
+    <a href="#gelisim">Oyuncu Gelişimi</a>
+    <a href="#analiz">Maç Analizi</a>
+    <a href="#notlar">Antrenör Notları</a>
+  </nav>
+</header>
+
+<main>
+
+<section id="home" class="hero">
+  <small>FUTBOL ANTRENÖRLÜK PLATFORMU</small>
+  <h1>Oyuncunu geliştir.<br>Takımını güçlendir.</h1>
+  <p>Antrenman, oyuncu gelişimi ve maç analizini tek yerde yönet.</p>
+  <a class="button" href="#programlar">Programları Gör</a>
+</section>
+
+<section class="stats">
+  <div><strong>⚽</strong><h3>Futbol</h3><p>Teknik ve taktik gelişim</p></div>
+  <div><strong>🏃</strong><h3>Antrenman</h3><p>Planlı çalışma programları</p></div>
+  <div><strong>📊</strong><h3>Analiz</h3><p>Performans takibi</p></div>
+  <div><strong>🧠</strong><h3>Gelişim</h3><p>Oyuncu gelişim sistemi</p></div>
+</section>
+
+<section id="programlar" class="card">
+  <small>ANTRENMAN PROGRAMLARI</small>
+  <h2>Programını oluştur</h2>
+
+  <select id="filter">
+    <option value="all">Tüm Programlar</option>
+    <option value="teknik">Teknik</option>
+    <option value="kondisyon">Kondisyon</option>
+    <option value="taktik">Taktik</option>
+  </select>
+
+  <div class="programs">
+
+    <div class="program" data-type="teknik">
+      <h3>⚽ Teknik Antrenman</h3>
+      <p>Top kontrolü, pas, dripling ve şut çalışmaları.</p>
+      <button onclick="showProgram('Teknik Antrenman')">Programı Aç</button>
+    </div>
+
+    <div class="program" data-type="kondisyon">
+      <h3>🏃 Kondisyon</h3>
+      <p>Dayanıklılık, hız ve çeviklik çalışmaları.</p>
+      <button onclick="showProgram('Kondisyon Programı')">Programı Aç</button>
+    </div>
+
+    <div class="program" data-type="taktik">
+      <h3>🧠 Taktik</h3>
+      <p>Hücum, savunma ve takım organizasyonu.</p>
+      <button onclick="showProgram('Taktik Programı')">Programı Aç</button>
+    </div>
+
+  </div>
+</section>
+
+<section id="gelisim" class="card">
+  <small>OYUNCU GELİŞİMİ</small>
+  <h2>Oyuncu Gelişim Takibi</h2>
+
+  <input id="playerName" placeholder="Oyuncu adı">
+
+  <label>Teknik</label>
+  <input type="range" id="technical" min="0" max="100" value="50">
+
+  <label>Hız</label>
+  <input type="range" id="speed" min="0" max="100" value="50">
+
+  <label>Dayanıklılık</label>
+  <input type="range" id="stamina" min="0" max="100" value="50">
+
+  <button onclick="calculatePlayer()">Gelişim Puanını Hesapla</button>
+
+  <h3 id="playerResult"></h3>
+</section>
+
+<section id="analiz" class="card">
+  <small>MAÇ ANALİZİ</small>
+  <h2>Maç notlarını kaydet</h2>
+
+  <input id="match" placeholder="Rakip takım">
+  <textarea id="matchNote" placeholder="Maç hakkında notlarını yaz..."></textarea>
+
+  <button onclick="saveMatch()">Maç Notunu Kaydet</button>
+  <p id="matchResult"></p>
+</section>
+
+<section id="notlar" class="card">
+  <small>ANTRENÖR DEFTERİ</small>
+  <h2>Kişisel Notlar</h2>
+
+  <input id="noteTitle" placeholder="Not başlığı">
+  <textarea id="noteText" placeholder="Öğrendiğin bilgiler ve fikirlerin..."></textarea>
+
+  <button onclick="saveNote()">Notu Kaydet</button>
+
+  <div id="savedNotes"></div>
+</section>
+
+</main>
+
+<footer>
+  ATHLETE TRAIN • Futbol • Antrenörlük • Gelişim
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
