@@ -1,20 +1,190 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Athlete Train</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Athlete Train | Antrenörlük Portalı</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #07130f;
+      color: white;
+    }
+
+    header {
+      background: #0b1d16;
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1e6b4d;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #45f59a;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #45f59a;
+    }
+
+    .hero {
+      padding: 80px 7%;
+      text-align: center;
+      background: linear-gradient(135deg, #07130f, #103b29);
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .hero span {
+      color: #45f59a;
+    }
+
+    .hero p {
+      color: #c8d8d0;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #45f59a;
+      color: #062016;
+      padding: 14px 30px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 55px 7%;
+    }
+
+    .title {
+      color: #45f59a;
+      margin-bottom: 25px;
+      font-size: 30px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #0d241b;
+      padding: 25px;
+      border-radius: 15px;
+      border: 1px solid #1e4937;
+    }
+
+    .card h3 {
+      color: #45f59a;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #c9d5d0;
+      line-height: 1.5;
+    }
+
+    .notes {
+      background: #0b1d16;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      background: #102a20;
+      color: white;
+      border: 1px solid #286448;
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    button {
+      background: #45f59a;
+      color: #062016;
+      border: none;
+      padding: 13px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #savedNotes {
+      margin-top: 25px;
+    }
+
+    .note {
+      background: #102a20;
+      padding: 18px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      border-left: 4px solid #45f59a;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #9eb2a8;
+      border-top: 1px solid #1e4937;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 7px;
+        font-size: 14px;
+      }
+
+      .hero h1 {
+        font-size: 35px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
   <div class="logo">⚽ ATHLETE TRAIN</div>
+
   <nav>
-    <a href="#home">Ana Sayfa</a>
+    <a href="#anasayfa">Ana Sayfa</a>
     <a href="#programlar">Programlar</a>
-    <a href="#gelisim">Oyuncu Gelişimi</a>
+    <a href="#oyuncu">Oyuncu Gelişimi</a>
     <a href="#analiz">Maç Analizi</a>
     <a href="#notlar">Antrenör Notları</a>
   </nav>
@@ -22,96 +192,115 @@
 
 <main>
 
-<section id="home" class="hero">
-  <small>FUTBOL ANTRENÖRLÜK PLATFORMU</small>
-  <h1>Oyuncunu geliştir.<br>Takımını güçlendir.</h1>
-  <p>Antrenman, oyuncu gelişimi ve maç analizini tek yerde yönet.</p>
-  <a class="button" href="#programlar">Programları Gör</a>
-</section>
+  <section class="hero" id="anasayfa">
+    <h1>ATHLETE <span>TRAIN</span></h1>
+    <p>Futbol • Antrenörlük • Oyuncu Gelişimi</p>
+    <a class="button" href="#programlar">Başla</a>
+  </section>
 
-<section class="stats">
-  <div><strong>⚽</strong><h3>Futbol</h3><p>Teknik ve taktik gelişim</p></div>
-  <div><strong>🏃</strong><h3>Antrenman</h3><p>Planlı çalışma programları</p></div>
-  <div><strong>📊</strong><h3>Analiz</h3><p>Performans takibi</p></div>
-  <div><strong>🧠</strong><h3>Gelişim</h3><p>Oyuncu gelişim sistemi</p></div>
-</section>
+  <section id="programlar">
+    <h2 class="title">Antrenman Programları</h2>
 
-<section id="programlar" class="card">
-  <small>ANTRENMAN PROGRAMLARI</small>
-  <h2>Programını oluştur</h2>
+    <div class="cards">
 
-  <select id="filter">
-    <option value="all">Tüm Programlar</option>
-    <option value="teknik">Teknik</option>
-    <option value="kondisyon">Kondisyon</option>
-    <option value="taktik">Taktik</option>
-  </select>
+      <div class="card">
+        <h3>⚽ Futbol</h3>
+        <p>
+          Teknik, pas, top kontrolü, hız ve çeviklik çalışmalarını
+          planlayabileceğin antrenman alanı.
+        </p>
+      </div>
 
-  <div class="programs">
+      <div class="card">
+        <h3>🏃 Kondisyon</h3>
+        <p>
+          Dayanıklılık, sürat, çeviklik ve kondisyon çalışmalarını
+          takip et.
+        </p>
+      </div>
 
-    <div class="program" data-type="teknik">
-      <h3>⚽ Teknik Antrenman</h3>
-      <p>Top kontrolü, pas, dripling ve şut çalışmaları.</p>
-      <button onclick="showProgram('Teknik Antrenman')">Programı Aç</button>
+      <div class="card">
+        <h3>💪 Kuvvet</h3>
+        <p>
+          Oyuncular için kuvvet ve fiziksel gelişim çalışmalarını
+          planla.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🧠 Taktik</h3>
+        <p>
+          Maç planı, takım dizilişi ve oyun stratejileri için
+          çalışmalar oluştur.
+        </p>
+      </div>
+
     </div>
+  </section>
 
-    <div class="program" data-type="kondisyon">
-      <h3>🏃 Kondisyon</h3>
-      <p>Dayanıklılık, hız ve çeviklik çalışmaları.</p>
-      <button onclick="showProgram('Kondisyon Programı')">Programı Aç</button>
+  <section id="oyuncu">
+    <h2 class="title">Oyuncu Gelişimi</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Teknik</h3>
+        <p>Pas, şut, top sürme ve ilk dokunuş gelişimini takip et.</p>
+      </div>
+
+      <div class="card">
+        <h3>Fiziksel</h3>
+        <p>Sürat, dayanıklılık, kuvvet ve çeviklik gelişimini takip et.</p>
+      </div>
+
+      <div class="card">
+        <h3>Zihinsel</h3>
+        <p>Karar verme, konsantrasyon ve oyun görüşü gelişimine odaklan.</p>
+      </div>
+
     </div>
+  </section>
 
-    <div class="program" data-type="taktik">
-      <h3>🧠 Taktik</h3>
-      <p>Hücum, savunma ve takım organizasyonu.</p>
-      <button onclick="showProgram('Taktik Programı')">Programı Aç</button>
+  <section id="analiz">
+    <h2 class="title">Maç Analizi</h2>
+
+    <div class="card">
+      <h3>Rakip Takım Analizi</h3>
+      <p>
+        Rakibin güçlü ve zayıf yönlerini, oyun sistemini ve
+        maç içerisindeki önemli noktaları buraya yazabilirsin.
+      </p>
+
+      <br>
+
+      <input id="rakip" type="text" placeholder="Rakip takım adı">
+
+      <textarea
+        id="analizMetni"
+        placeholder="Maç analizini yaz..."></textarea>
+
+      <button onclick="analizKaydet()">Analizi Kaydet</button>
+
+      <div id="analizSonucu"></div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <section class="notes" id="notlar">
+    <h2 class="title">Antrenör Defteri</h2>
 
-<section id="gelisim" class="card">
-  <small>OYUNCU GELİŞİMİ</small>
-  <h2>Oyuncu Gelişim Takibi</h2>
+    <input
+      id="noteTitle"
+      type="text"
+      placeholder="Not başlığı">
 
-  <input id="playerName" placeholder="Oyuncu adı">
+    <textarea
+      id="noteText"
+      placeholder="Öğrendiğin bilgiler ve fikirlerin..."></textarea>
 
-  <label>Teknik</label>
-  <input type="range" id="technical" min="0" max="100" value="50">
+    <button onclick="notKaydet()">Notu Kaydet</button>
 
-  <label>Hız</label>
-  <input type="range" id="speed" min="0" max="100" value="50">
-
-  <label>Dayanıklılık</label>
-  <input type="range" id="stamina" min="0" max="100" value="50">
-
-  <button onclick="calculatePlayer()">Gelişim Puanını Hesapla</button>
-
-  <h3 id="playerResult"></h3>
-</section>
-
-<section id="analiz" class="card">
-  <small>MAÇ ANALİZİ</small>
-  <h2>Maç notlarını kaydet</h2>
-
-  <input id="match" placeholder="Rakip takım">
-  <textarea id="matchNote" placeholder="Maç hakkında notlarını yaz..."></textarea>
-
-  <button onclick="saveMatch()">Maç Notunu Kaydet</button>
-  <p id="matchResult"></p>
-</section>
-
-<section id="notlar" class="card">
-  <small>ANTRENÖR DEFTERİ</small>
-  <h2>Kişisel Notlar</h2>
-
-  <input id="noteTitle" placeholder="Not başlığı">
-  <textarea id="noteText" placeholder="Öğrendiğin bilgiler ve fikirlerin..."></textarea>
-
-  <button onclick="saveNote()">Notu Kaydet</button>
-
-  <div id="savedNotes"></div>
-</section>
+    <div id="savedNotes"></div>
+  </section>
 
 </main>
 
@@ -119,7 +308,87 @@
   ATHLETE TRAIN • Futbol • Antrenörlük • Gelişim
 </footer>
 
-<script src="script.js"></script>
+<script>
+
+  function notKaydet() {
+
+    const title = document.getElementById("noteTitle").value;
+    const text = document.getElementById("noteText").value;
+
+    if (title === "" || text === "") {
+      alert("Lütfen başlık ve not alanlarını doldur.");
+      return;
+    }
+
+    const notes = JSON.parse(localStorage.getItem("athleteNotes")) || [];
+
+    notes.push({
+      title: title,
+      text: text
+    });
+
+    localStorage.setItem("athleteNotes", JSON.stringify(notes));
+
+    document.getElementById("noteTitle").value = "";
+    document.getElementById("noteText").value = "";
+
+    notlariGoster();
+  }
+
+
+  function notlariGoster() {
+
+    const notes = JSON.parse(localStorage.getItem("athleteNotes")) || [];
+
+    const area = document.getElementById("savedNotes");
+
+    area.innerHTML = "";
+
+    notes.forEach(function(note) {
+
+      area.innerHTML += `
+        <div class="note">
+          <h3>${note.title}</h3>
+          <p>${note.text}</p>
+        </div>
+      `;
+
+    });
+  }
+
+
+  function analizKaydet() {
+
+    const rakip = document.getElementById("rakip").value;
+    const analiz = document.getElementById("analizMetni").value;
+
+    if (rakip === "" || analiz === "") {
+      alert("Lütfen rakip takım ve analiz alanlarını doldur.");
+      return;
+    }
+
+    localStorage.setItem(
+      "matchAnalysis",
+      JSON.stringify({
+        rakip: rakip,
+        analiz: analiz
+      })
+    );
+
+    document.getElementById("analizSonucu").innerHTML = `
+      <div class="note">
+        <h3>${rakip}</h3>
+        <p>${analiz}</p>
+      </div>
+    `;
+
+    alert("Maç analizi kaydedildi!");
+  }
+
+
+  notlariGoster();
+
+</script>
 
 </body>
 </html>
